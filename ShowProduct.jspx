@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:my="http://jakarta.apache.org/tomcat/mytaglib">
+
+<head>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+</head>
+<body>
+
+<form action="Cashier"   method="POST">	
+	<c:set var="products" value="${applicationScope.catalog.products}" />
+	<c:forEach var="item" items="${products}">
+			
+		<c:if test="${item.key eq requestScope.productID}">
+			<c:set var="product" value="${item.value}" />
+		</c:if>
+	
+	</c:forEach>	
+			
+	<table align="left" width="100%" >
+	   <tr><td><div class="messageBox">
+		
+		<table width="100%" >
+			 <tr class="header" ><th colspan="2">Product</th></tr>
+			<tr>
+			  	<td align="left"   class="title">ID</td>
+				<td>${product.productID}</td>
+			</tr>
+			<tr>
+			  	<td align="left"   class="title"> Name</td>
+				<td >${product.productName}</td>
+			</tr>
+			<tr>
+				<td class="title" > Per Unit</td>
+				<td>${product.quantityPerUnit}</td>
+			</tr>
+		        <tr> 
+			        <td class="title">Quantity</td> 
+		        	<td><input type="text" name="quantity" align="right" value="1" size="3"/></td>
+			</tr>
+			 <tr> 
+			        <td class="title">Price</td> 
+		        	<td>$${product.unitPrice}</td>
+			</tr>
+			<tr> 
+			      <td colspan="2" align="center" >
+				<img  border="1"  src="Pictures/${product.categoryID}/${product.productID}.jpg" alt="${product.productName}" />
+				</td> 
+			</tr>
+			<tr>
+			        <td  colspan="2"  align="right" >
+			
+					<input type="hidden" name="productID" value="${product.productID}"/>
+			     		<input type="hidden" name="categoryID" value="${product.categoryID}"/>
+		 	     		<input type="submit" class="specialButton"  name="add" value="Add to Shopping Card"/>
+				   
+
+	       		</td>
+	       		</tr>
+		</table>
+		</div>	
+		</td>
+		
+	</tr>
+	</table>
+	
+</form>
+	
+
+</body>
+</html>
+

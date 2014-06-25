@@ -1,0 +1,232 @@
+body {
+	background-color:white;//#E2DFCC;	
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin-left :4;
+	margin-right :0;
+	margin-bottom :0;
+	margin-top :0;
+}
+
+.messageBox {
+	 position: static;
+	 display: block;
+	 background-color: #ffdead;
+	 border: 1px solid #800000;
+	}
+
+
+.messageBox_Search {
+	 position: static;
+	 display: block;
+	 background-color: #CCCCFF;
+	 border: 1px solid #CCCCFF;
+	}	
+	
+	
+.messageBox_Absolute {
+	 position: absolute;
+	 display: block;
+	 background-color: #ffdead;
+	 border: 1px solid #800000;
+	}	
+	
+	
+	
+.specialButton{
+	color:white;
+	background-color: #990000;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight :bold;
+}
+
+a,a:link{
+	color :blue;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+
+a.headers:link{
+	color :white;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+a.headers:visited{
+	color :white;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+
+
+a.sigOUT:link{
+	color :blue;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight :normal;
+}
+
+
+
+table.{
+	font-weight :normal;
+	font-size :12px;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: black;
+}
+
+
+.title
+{
+	
+	font-style :normal ;
+	font-weight :bold;
+	font-size :14px;
+	color :#bb1111;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+	 
+}
+
+.welcometext
+{
+	
+	font-weight :normal;
+	color :Blue;
+	display :block;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+
+tr.tr td {background-color:white;}
+tr.trred td {background-color:yellow;}
+
+td.press {background-color:yellow;}
+td.td {background-color:white;}
+
+
+tr.selectedForEdit{
+background-color:#99FFFF;
+}
+
+td.DayShift {
+background-color:yellow;
+}
+
+
+td.cellSelect{
+background-color:yellow;
+}
+.Error
+{
+	font-weight :bold;
+	color :green;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+
+
+.importanttext
+{
+	
+	font-weight :normal;
+	color :red;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size:12pt;
+
+}
+
+tr.header{
+	background-color:#8F2B2B; /*#D5D2C9;*/
+	font-size :14px;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color:white;
+	font-weight :bold;
+}
+
+
+.tableCellColor{
+	background-color:white;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.caption{
+	color:blue;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	
+}
+
+td.header{
+	color:green;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight :bold;
+}
+
+.highlightText{
+	color:#336600;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+td.header{
+	
+	font-weight :bold;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size :12px;	
+	background-color:#D5D2C9;
+}
+
+td.NameOFTheField{
+
+	color:#CC3300;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight :bold;
+}
+
+d.NameOFTheField_Regular{
+
+	color:black;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight :bold;
+}
+
+.borderbg {
+	background-color: #F8F8FF ;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.paragraph {
+	position: relative;
+	left: 10%;
+	width: 80%;
+	font-size: 10pt;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+
+.commands {
+	left: 10%;
+	position: relative;
+	font-size: 10pt;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+
+
+.mainTable {
+	bgcolor: #F8F8FF; 
+	text-align: center;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+
+.DDpos {
+	position: absolute;
+	left: 10px;
+	top: 30px;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+.u{
+FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+
+}
+

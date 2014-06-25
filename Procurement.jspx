@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:my="http://jakarta.apache.org/tomcat/mytaglib">
+
+<link rel="stylesheet" href="codebase/nws.css"></link>
+
+<title>Procurement</title>
+
+<body>
+	<table>
+	<div class="messageBox">
+	<jsp:useBean id="now" class="java.util.Date" />
+	<h1> Procurement Report created at: ${now} </h1>
+	</div>	
+	</table>
+</body>
+</html>

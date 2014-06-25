@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:my="http://jakarta.apache.org/tomcat/mytaglib"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions" 	>
+
+<head>
+<title>Catalog</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+</head>
+<body>
+
+       
+	<c:set var="category" value="${applicationScope.catalog.categories}" />	
+	<table align="left">
+	<tr><td  valign="top">
+	<div class="messageBox">
+	<table>
+		<tr class="header">
+			<th colspan="4">Categories</th>
+		</tr>	
+	
+			<c:set var="i" value="0" />
+			<c:set var="selected" value="" />
+			<c:forEach var="item" items="${category}">
+			<c:set var="i"  value="${i + 1}"/>
+			<c:if test="${i eq 1}">	
+				&lt;tr&gt;		
+			</c:if>
+			<c:choose>
+				<c:when  test="${item.key eq categoryID}">	
+					<c:set var="selected" value="#FF6633" />	
+				</c:when>
+				<c:otherwise>
+					<c:set var="selected" value="" />
+				</c:otherwise>
+			</c:choose>
+			<td align="center" bgcolor="${selected}">
+			<a href="Catalogue?categoryID=${item.key}">
+			<img border="1"   src="Pictures/${item.key}.jpg" alt="${item.value.categoryName}" /></a><br/>
+		
+			<a href="Catalogue?categoryID=${item.key}"> ${item.value.categoryName} </a>
+		
+			</td>
+		
+			
+			<c:if test="${i eq 2}">	
+				&lt;/tr&gt;
+				<c:set var="i" value="0" />
+			</c:if>
+			
+			</c:forEach>
+			
+			<c:if test="${i ne 0}">	
+				&lt;/tr&gt;
+			</c:if>
+		
+			
+	</table>
+	</div>
+	</td>
+	</tr>
+
+</table>
+</body>
+</html>
+

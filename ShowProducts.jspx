@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:my="http://jakarta.apache.org/tomcat/mytaglib"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions" 	>
+
+<head>
+<title>Catalogue</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link rel="stylesheet" type="text/javascript" href="menu/menu.js"></link>
+</head>
+<body>
+     <c:set var="category" value="${applicationScope.catalog.categories}" />	
+     <c:choose>
+     	<c:when test="${requestScope.categoryID ne null}">
+     		<c:set var="categories" value="${applicationScope.catalog.productsByCategories}" />
+		<c:forEach var="item" items="${categories}">
+			<c:if test="${item.key eq requestScope.categoryID}">
+				<c:set var="products" value="${item.value}" />
+			</c:if>
+		</c:forEach>	
+     	</c:when>
+     	<c:otherwise>
+		<c:set var="products" value="${applicationScope.catalog.products}" />				
+     	</c:otherwise>	
+     </c:choose>
+		
+	
+	<table align="left"><tr>
+	<td  valign="top">
+	<div class="messageBox">
+	<table  width="100%">
+	<tr class="header"><th colspan="4">Products</th></tr>
+	<tr><th>ID</th><th>Name</th><th>Price</th><th></th></tr>
+	
+	<c:choose>
+		<c:when test="${requestScope.searchResults ne null}">	
+
+			<c:forEach var="item" items="${products}">
+			
+			<c:if test="${fn:containsIgnoreCase(item.value.productName, requestScope.searchResults)}">
+			<tr onmouseover="highlight(this)" onmouseout="lowlight(this)">
+				<td >${item.value.productID}</td>
+				<td align="left"><a href="Catalogue?productID=${item.value.productID}">${item.value.productName}</a></td>				
+				<td align="right">${item.value.unitPrice}</td>
+				<td align="center">CAD</td>
+			</tr>
+			</c:if>
+	
+			</c:forEach>		
+		</c:when>
+		
+		<c:otherwise>				
+			<c:forEach var="item" items="${products}">
+				 <c:choose>
+					 <c:when  test="${item.key eq requestScope.productID}">	
+						 &lt;tr bgcolor="#FF6633"&gt;	
+					 </c:when>
+					 <c:otherwise>
+						 &lt;tr onmouseover="highlight(this)" onmouseout="lowlight(this)" &gt;
+					 </c:otherwise>
+				 </c:choose>
+				
+				 <td >${item.value.productID}</td>
+	
+				 <td align="left">
+				 
+				 <c:url var="urlProduct" value="Catalogue">
+					<c:param name="productID" value="${item.value.productID}"/>
+					<c:param name="categoryID" value="${item.value.categoryID}"/>
+				 </c:url>
+				 <a href="${fn:escapeXml(urlProduct)}">${item.value.productName}</a>
+				 
+				 </td>
+				 <td align="right">${item.value.unitPrice}</td>
+				 <td align="center">CAD</td>
+				&lt;/tr&gt;
+			 
+
+			</c:forEach>
+		</c:otherwise>
+		
+	</c:choose>
+	
+	</table>
+	</div>
+	</td>
+	</tr>
+    </table>
+
+</body>
+</html>
+

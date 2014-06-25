@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:my="http://jakarta.apache.org/tomcat/mytaglib">
+<head>
+
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link rel="stylesheet" type="text/css" href="codebase/menu.css"></link>
+<script type="text/javascript" language="JavaScript1.2"	src="menu/menu.js"></script>
+</head>
+<body>
+<form action="Catalogue" method="POST">	
+
+
+	<div align="left"><menu id="MAIN_MENU">
+		<c:if test="${sessionScope.client ne null}">
+			<span onmouseover="javascript:menuSelect(this)" onmouseout="javascript:menuUnselect(this)">
+            <a class="menuLink" href="Login?logout=1">Logout</a></span>
+			<span onmouseover="javascript:menuSelect(this)" onmouseout="javascript:menuUnselect(this)">
+			<a class="menuLink" href="CustomerProfile.jspx">Profile</a></span>
+			<span onmouseover="javascript:menuSelect(this)"
+			onmouseout="javascript:menuUnselect(this)">
+			<a class="menuLink" href="Cashier?showOrders">Orders</a></span> 	
+		</c:if>
+
+		<c:if test="${sessionScope.client ==  null}">
+		<span onmouseover="javascript:highlight(this)" 
+                   onmouseout="javascript:menuUnselect(this)"><a class="menuLink" href="Login.jspx">Login</a></span>	
+		</c:if>
+		
+		<span onmouseover="javascript:highlight(this)"
+			onmouseout="javascript:menuUnselect(this)"><a class="menuLink" href="Catalogue">Cataloque</a></span>
+		<span onmouseover="javascript:highlight(this)"
+			onmouseout="javascript:menuUnselect(this)"><a class="menuLink"  href="Cashier">Shopping Cart</a></span>
+		
+		
+		<span><input type="text" name="searchByName" value="" />
+		<input type="submit" class="specialButton"  value="Search"/></span>
+
+		<span onmouseover="javascript:highlight(this)"
+			onmouseout="javascript:menuUnselect(this)"><a class="menuLink"  href="Contact.jspx">Contact</a></span>
+	   </menu>
+	
+	
+		
+	</div>
+	</form>
+</body>
+</html>

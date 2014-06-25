@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="dataroot">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element ref="Products" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element ref="Categories" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element ref="Suppliers" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+<xsd:attribute name="generated" type="xsd:dateTime"/>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Products">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="ProductID" minOccurs="1" type="xsd:positiveInteger"/>
+<xsd:element name="ProductName" minOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="40"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="SupplierID" minOccurs="0" type="xsd:positiveInteger"/>
+<xsd:element name="CategoryID" minOccurs="0" type="xsd:positiveInteger"/>
+<xsd:element name="QuantityPerUnit" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="20"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="UnitPrice" minOccurs="0" type="xsd:decimal"/>
+<xsd:element name="UnitsInStock" minOccurs="0" type="xsd:positiveInteger"/>
+<xsd:element name="UnitsOnOrder" minOccurs="0" type="xsd:positiveInteger"/>
+<xsd:element name="ReorderLevel" minOccurs="0" type="xsd:positiveInteger"/>
+<xsd:element name="Discontinued" minOccurs="1" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Categories">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="CategoryID" minOccurs="1" type="xsd:positiveInteger"/>
+<xsd:element name="CategoryName" minOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="15"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Description" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Picture" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:base64Binary">
+<xsd:maxLength value="1476395008"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="Suppliers">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element name="SupplierID" minOccurs="1" type="xsd:positiveInteger"/>
+<xsd:element name="CompanyName" minOccurs="1">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="40"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="ContactName" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="30"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="ContactTitle" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="30"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Address" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="60"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="City" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="15"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Region" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="15"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="PostalCode" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Country" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="15"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Phone" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="24"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="Fax" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="24"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+<xsd:element name="HomePage" minOccurs="0">
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="536870910"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>

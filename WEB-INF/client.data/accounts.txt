@@ -1,0 +1,4 @@
+1234T123	The International Taster	120 Bloor Street West	Toronto	Ontario	M5S 2R5	7676
+1111E111	Sweet Treats	770 Grandmere Avenue	North York	Ontario	M2N 6V6	3314
+4321G321	Only The Best	120 de La Gauchetiere W.	Montreal	Quebec	H5A 1E4	5353
+7654V123	Eat with Style	1088 Burrard Street	Vancouver	British Columbia	V6Z 2R9	1771

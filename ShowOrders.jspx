@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:my="http://jakarta.apache.org/tomcat/mytaglib">
+
+<head>
+<title>Catalog</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+</head>
+
+<body>
+
+	<c:set var="result" value="${requestScope.orderList}" />
+	<table align="left" >
+	<tr>
+		<th>
+			<jsp:directive.include file="menu.jspx" />
+		</th>
+	</tr>
+	<tr><td>
+	
+	<table  align="left">
+
+		<tr class="header">
+			<th>Current Orders</th>
+	   	</tr>
+	   	<tr>
+        	<td>
+        		<div class="messageBox">
+	    	     	<c:forEach var="orderID" items="${requestScope.orderList}">	
+	              		<tr  onmouseover="highlight(this)" onmouseout="lowlight(this)"><td>
+	              			<a href="Cashier?orderID=${orderID}" target="_blank">
+	              				${orderID}</a>
+	              			</td>
+	              		</tr>
+ 	         		</c:forEach>
+          		</div>
+          	</td>
+        </tr>  
+	</table>
+	</td></tr></table>
+
+</body>
+</html>
+
